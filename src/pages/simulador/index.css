@@ -1,0 +1,119 @@
+.formSimulador{
+    width: 80%;
+    height: auto;
+    padding: 10px;
+    margin: 40px auto;
+    border: 1px solid #fff;
+    border-bottom-left-radius: 10px;
+}
+form label{
+    color : #fff !important;
+}
+
+.valAtual{
+    width: 120px !important;
+}
+.text-white{
+    color : #fff !important;
+}
+input[name="valAtual"]{
+    text-align: right !important;
+}
+.selectAge{
+    width: 200px !important; 
+    margin-top: 4px;
+}
+.btnSimular{
+    margin-top: 40px !important;
+    background: #21BA45 !important;
+    color : #fff !important;
+}
+.customModal{
+    z-index: 100000000;
+}
+ul
+{
+list-style: none;
+padding: 0;
+margin: 0;
+margin-top : 5px;
+}
+ul li{
+    color : #fff;
+    padding: 4px;
+    
+}
+ul li a{
+    color : #D01919;
+    font-weight: bold;
+}
+ul li a:hover{
+    color : #D01919;
+    font-weight: bold;
+}
+#titleDepen{
+    margin-top : 10px !important;
+}
+.myButton{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    padding-top: 4px;
+}
+.selectCat{
+    background: #ee7202 !important;
+    color : #fff !important;
+    margin-bottom: 25px;
+    width: 245px !important;
+    margin-top: 10px;
+    border : none !important;
+}
+.fieldDependentes{
+    color : #fff !important;
+}
+#totalPlano{
+    color: #fff;
+}
+.resultView{
+    width: 100%;
+    padding: 10px;
+    border-bottom-left-radius: 10px;
+    animation-name: up;
+    animation-duration: .2s;
+    transition: all .5s;
+}
+.alinharDireita{
+    text-align: right  !important;
+}
+.resultView h2{
+    color : #fff;    
+}
+.button-back{
+    background: #fff !important;
+    color : #000 !important;
+}
+
+#valEconomizado{
+    margin-bottom: 10px;
+    font-style: italic;
+}
+@keyframes up{
+    from{
+        margin-top : -1000px;
+    }to{
+        margin-top : 0px;
+    }
+}
+
+
+.button-back{
+    margin-right: 10px !important;
+}
+
+
+/* Responsive */
+@media only screen and (max-width: 480px) {
+    .button-back{
+        margin-bottom: 10px !important;
+    }
+}
