@@ -6,10 +6,12 @@
     border: 1px solid #fff;
     border-bottom-left-radius: 10px;
 }
-form label{
+.colorBlack{
+    color : #000 !important;
+}
+.colorWhite{
     color : #fff !important;
 }
-
 .valAtual{
     width: 120px !important;
 }

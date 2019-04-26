@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { withRouter, Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import { Modal, Button } from 'react-bootstrap';
 import services from '../../services';
 import CurrencyInput from 'react-currency-input';
@@ -106,10 +106,12 @@ class Simulador extends Component {
         //alert(this.props.match.params.plano)
         let color = '';
         let plano = '';
+        let colorFont = '#fff';
         const pPlano = this.props.match.params.plano;
 
         if (pPlano === 'C') {
             color = 'yellow';
+            colorFont = '#000';
             plano = 'Plano Clássico';
         } else if (pPlano === 'E') {
             color = 'orange';
@@ -118,6 +120,8 @@ class Simulador extends Component {
             color = 'purple';
             plano = 'Plano Absoluto';
         }
+
+        console.log(colorFont);
 
         function resolveText(item, index) {
             if (item.indexOf('A') === -1) {
@@ -178,22 +182,21 @@ class Simulador extends Component {
                             {
                                 !this.state.showResult ? (
                                     <div>
-                                        <form class="ui form" onSubmit={this.submitForm}>
+                                        <form className="ui form" onSubmit={this.submitForm}>
                                             {resolvePlanoEstilo()}
-                                            <div class="field">
-                                                <div class="field">
-                                                    <label>Qual o valor do seu plano atual?</label>
-                                                    <div class="ui right labeled input valAtual">
-                                                        <label for="amount" class="ui label" style={{ background: `${color}` }}>R$</label>
-                                                        {/* <input type="text" name="valAtual" value={this.state.valAtual} onChange={this.handleValAtual} placeholder="0,00" id="amount" /> */}
+                                            <div className="field">
+                                                <div className="field">
+                                                    <label className="colorWhite">Qual o valor do seu plano atual?</label>
+                                                    <div className="ui right labeled input valAtual">
+                                                        <label htmlFor="amount" className="ui label colorBlack" style={{ background: `${color}`}}>R$</label>                                                       
                                                         <CurrencyInput  thousandSeparator="" className="alinharDireita" value={this.state.valAtual} onChangeEvent={this.handleValAtual}/>
                                                     </div>
                                                 </div>
                                             </div>
 
                                             <div className="field">
-                                                <labe className="text-white">Qual sua faixa de Idade ?</labe>
-                                                <select value={this.state.firstFaixa} onChange={this.handleFirstFaixa} name="faixa-idade" multiple="" class="ui fluid dropdown selectAge">
+                                                <labe className="text-white colorWhite">Qual sua faixa de Idade ?</labe>
+                                                <select value={this.state.firstFaixa} onChange={this.handleFirstFaixa} name="faixa-idade" multiple="" className="ui fluid dropdown selectAge">
                                                     <option value="0018">00 - 18</option>
                                                     <option value="1923">19 - 23</option>
                                                     <option value="2428">24 - 28</option>
@@ -208,18 +211,18 @@ class Simulador extends Component {
                                             </div>
 
                                             <div className="field fieldDependentes">
-                                                <button class="ui active button" type="button" onClick={this.openModal} style={{ background: `${color}`, color: '#fff' }}>
-                                                    <i class="plus square outline icon"></i>
+                                                <button className="ui active button colorBlack" type="button" onClick={this.openModal} style={{ background: `${color}`, color: colorFont }}>
+                                                    <i className="plus square outline icon "></i>
                                                     Adicionar Dependente
                                                 </button>
-                                                <label id="titleDepen">Dependentes</label>
+                                                <label id="titleDepen" className="colorWhite">Dependentes</label>
                                                 <ul>
                                                     {
                                                         dependentes
                                                     }
                                                 </ul>
                                             </div>
-                                            <button class="fluid ui button btnSimular">Simular</button>
+                                            <button className="fluid ui button btnSimular">Simular</button>
                                         </form>
                                     </div>
                                 ) : (
@@ -234,14 +237,14 @@ class Simulador extends Component {
                                                 ) : ''
 
                                             }
-                                            <button class="ui active button button-back" onClick={this.back}>
-                                                <i class="angle left icon"></i>
+                                            <button className="ui active button button-back" onClick={this.back}>
+                                                <i className="angle left icon"></i>
                                                 Voltar
                                             </button>
-                                            <button class="ui active button" style={{ background: '#21BA45', color: '#fff' }} onClick={this.back}>
+                                            <a href="https://forms.gle/tcTaWAvMKbeZHGMh7" target="_Blank" className="ui active button" style={{ background: '#21BA45', color: '#fff' }} onClick={this.back}>
                                                 
                                                 Quero fazer a minha adesão =)
-                                            </button>
+                                            </a>
                                         </div>
                                     )
 
